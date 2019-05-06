@@ -15,9 +15,9 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class noPartition {
     
-    int rows = 100; 
-    int cols = 100; 
-    int[][] map = new int[rows][cols]; 
+        int rows = 100; 
+        int cols = 100; 
+        int[][] map = new int[rows][cols]; 
     ArrayList<Player> players; 
     long response_time = 0; 
 
