@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  * @author dayanarios
  */
-public class Array_Partition {
+public class Array_PartitionSmall {
     int[][] map =    {
                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 
                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, 
@@ -128,14 +128,14 @@ public class Array_Partition {
     };
 //1x10x10 int[row][column]
     //can only communicate with players in array/region
-    int rows = 100; 
-    int cols = 100; 
+    int rows = 50; 
+    int cols = 50; 
     ArrayList<Player> players; 
     ArrayList<Player>[] player_map = new ArrayList[rows]; 
     long response_time = 0; 
     
 
-    public Array_Partition(ArrayList<Player> players) {
+    public Array_PartitionSmall(ArrayList<Player> players) {
         this.players = players; 
         
         for(int i = 0; i< rows; i++){

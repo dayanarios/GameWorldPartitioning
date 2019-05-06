@@ -1,2 +1,0 @@
-gamepartitioning.Player
-gamepartitioning.Pair

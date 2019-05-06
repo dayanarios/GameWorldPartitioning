@@ -16,6 +16,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 public class Player {
+    
     private int ID; 
     private Pair<Integer> location; 
     static int ID_generator = 0; 
