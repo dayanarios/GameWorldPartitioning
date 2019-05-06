@@ -74,7 +74,7 @@ public class noPartition {
     }
 
     public long getTime() {
-        return response_time/1000000; //in milliseconds
+        return response_time; //in milliseconds
     }
     
     
