@@ -25,15 +25,18 @@ public class main {
             players.add(new Player()); 
         }
         
+        System.out.println("\t\t GAME MAP RESPONSE TIMES");
+        System.out.println("============================================================");
+        
         noPartition game_map = new noPartition(players); 
         game_map.game(); 
-        System.out.println("game map with no paritions response time: " + game_map.getTime() + "msec"); 
+        System.out.println("With no paritions: \t\t" + game_map.getTime() + " msec"); 
 
         Array_Partition array_map = new Array_Partition(players); 
         //array_map.display();
         array_map.game();
-        System.out.println("response time for partitioning game map with subarrays:"
-                + " " + array_map.getTime() + "msec"); 
+        System.out.println("With subarrays partitions: \t"
+                 + array_map.getTime() + " msec"); 
         
     }
     
