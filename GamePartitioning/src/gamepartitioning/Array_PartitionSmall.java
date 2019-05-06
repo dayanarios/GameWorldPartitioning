@@ -15,16 +15,6 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author dayanarios
  */
 public class Array_PartitionSmall {
-    int[][] maps =    {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                      {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}}; //1x10x10 int[row][column]
     //can only communicate with players in array/region
     int rows = 200; 
     int cols = 50;
@@ -44,9 +34,26 @@ public class Array_PartitionSmall {
         }
         
         for(Player p : players){
-            int r = ThreadLocalRandom.current().nextInt(0, rows);
-            int c = ThreadLocalRandom.current().nextInt(0, cols);
-            p.setLocation(new Pair(r,c));
+            int r = p.getLocation().first()*2; 
+            int c = p.getLocation().second();
+            
+            if (c >=  cols){
+                c = c % cols;  //appropriate column
+            }
+            
+            if(p.getLocation().first() == 0 && c<rows){
+                r=0; 
+            }
+            else if(p.getLocation().first() == 0 && c>rows){
+                r=1; 
+            }
+            else if(c>cols){
+                r-=1; 
+            }
+            
+            if(c==50){
+                c-=1; 
+            }   
             map[r][c]= 1; 
             player_map[r].add(p); 
         }

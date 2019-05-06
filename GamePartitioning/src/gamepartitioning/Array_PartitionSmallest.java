@@ -15,12 +15,11 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author dayanarios
  */
 public class Array_PartitionSmallest {
-    int[][] maps =    { {0}  };
     
     //1x10x10 int[row][column]
     //can only communicate with players in array/region
-    int rows = 1000; 
-    int cols = 1; 
+    int rows = 500; 
+    int cols = 20; 
     int[][] map = new int[rows][cols]; 
     ArrayList<Player> players; 
     ArrayList<Player>[] player_map = new ArrayList[rows]; 
@@ -38,9 +37,28 @@ public class Array_PartitionSmallest {
         }
         
         for(Player p : players){
-            int r = ThreadLocalRandom.current().nextInt(0, rows);
-            int c = ThreadLocalRandom.current().nextInt(0, cols);
-            p.setLocation(new Pair(r,c));
+            int r = p.getLocation().first()*5; 
+            int c = p.getLocation().second();
+            
+            if (c >=  cols){
+                c = c % cols;  //appropriate column
+            }
+            
+            if(p.getLocation().first() == 0 && c<rows){
+                r=0; 
+            }
+            else if(p.getLocation().first() == 0 && c>rows){
+                r= c/cols;
+            }
+            else if(c>cols){
+                r+= c/cols; 
+            }
+            
+            if(c == 20){
+                c-=1; 
+            }
+
+            //System.out.println(r + " " + c);  
             map[r][c]= 1; 
             player_map[r].add(p); 
         }

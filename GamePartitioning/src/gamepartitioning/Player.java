@@ -23,9 +23,14 @@ public class Player {
     int fib_min = 13; 
     int fib_max = 18; 
     private Hashtable<Integer, Integer> values = new Hashtable(); 
+    int rows = 100; 
+    int cols= 100; 
     
     public Player(){
         ID = ID_generator++; 
+        int r = ThreadLocalRandom.current().nextInt(0, rows);
+        int c = ThreadLocalRandom.current().nextInt(0, cols);
+        setLocation(new Pair(r,c));
     }
     
     public int action(){
@@ -59,6 +64,7 @@ public class Player {
     public void setValue(int id, int value){
         values.put(id, value); 
     }
+    
     
     
    
