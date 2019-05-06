@@ -36,7 +36,7 @@ public class main {
         long endTime1   = System.nanoTime();
         long totalTime1 = endTime1 - startTime1; 
         System.out.println("None\t\t -\t\t" 
-                + totalTime1 + " nsec\t" + game_map.getTime() + " msec" ); 
+                + totalTime1 + " nsec\t" + totalTime1/1000000 + " msec" ); 
 
         //partition: 10x10
         long startTime2 = System.nanoTime(); 
@@ -46,7 +46,7 @@ public class main {
         long endTime2   = System.nanoTime();
         long totalTime2 = endTime2 - startTime2; 
         System.out.println("Subarrays  \t 100x100 \t"
-                 + totalTime2 + " nsec\t" + array_map.getTime() + " msec"); 
+                 + totalTime2 + " nsec\t" + totalTime2/1000000 + " msec"); 
         
         //partition: 5x5
         long startTime3 = System.nanoTime(); 
@@ -56,7 +56,7 @@ public class main {
         long totalTime3 = endTime3 - startTime3; 
         
         System.out.println("Subarrays  \t 50x50 \t\t"
-                 + totalTime3 + " nsec\t" + array_mapSmall.getTime() + " msec");
+                 + totalTime3 + " nsec\t" + totalTime3/1000000 + " msec");
         
         
         //partition: 1x1
@@ -67,7 +67,7 @@ public class main {
         long totalTime4 = endTime4 - startTime4; 
         
         System.out.println("Subarrays  \t 1x1 \t\t"
-                 + totalTime4 + " nsec\t" + array_mapSmallest.getTime() + " msec");
+                 + totalTime4 + " nsec\t" + totalTime4/1000000 + " msec");
         
         
         System.out.println("============================================================");
